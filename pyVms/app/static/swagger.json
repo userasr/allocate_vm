@@ -16,9 +16,9 @@
     "/init": {
       "get": {
         "tags": [
-          "Initialize Data Request:"
+          "Initialize Dummy Data: RUN IT ONLY ONCE."
         ],
-        "summary": "Returns csv file",
+        "summary": "Initializes dummy data and stores in a csv file with following columns: ip|occupied|formatted|owner|key|memory|storage",
         "responses": {
           "200": {
             "description": "OK"
@@ -29,7 +29,7 @@
     "/list/{occupied}": {
       "post": {
         "tags": [
-          "List All VMs Request:"
+          "List All VMs:"
         ],
         "parameters": [
           {
@@ -51,7 +51,7 @@
     "/occupied/{uname}": {
       "post": {
         "tags": [
-          "List VMs occupied the provided user:"
+          "List VMs occupied by the provided user:"
         ],
         "parameters": [
           {
