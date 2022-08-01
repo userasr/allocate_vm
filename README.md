@@ -19,7 +19,7 @@ To create the docker image run the following command:
 
     docker build -t dockerasr/vms:1.0.0 .
     
-#### Note: The image is already uploaded on Dockerhub and publically available here: https://hub.docker.com/r/dockerasr/vms
+##### Note: The image is already uploaded on Dockerhub and publically available here: https://hub.docker.com/r/dockerasr/vms
 
 To create the container run the following command:
 
