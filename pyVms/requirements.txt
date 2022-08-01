@@ -1,0 +1,5 @@
+flask
+flask_swagger
+flask_swagger_ui
+pytest
+pytest-cov

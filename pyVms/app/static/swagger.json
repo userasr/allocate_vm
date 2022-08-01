@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Allocate VMs",
+    "version": "1.0.0",
+    "title": "Manage VMs",
+    "contact": {
+      "email": ""
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "paths": {
+    "/init": {
+      "get": {
+        "tags": [
+          "Initialize Data Request:"
+        ],
+        "summary": "Returns csv file",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/list/{occupied}": {
+      "post": {
+        "tags": [
+          "List All VMs Request:"
+        ],
+        "parameters": [
+          {
+            "name": "occupied",
+            "in": "path",
+            "required": true,
+            "description": "provide either True or False",
+            "type": "string"
+          }
+        ],
+        "summary": "Returns list of all VMs which are either occupied or not occupied",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/occupied/{uname}": {
+      "post": {
+        "tags": [
+          "List VMs occupied the provided user:"
+        ],
+        "parameters": [
+          {
+            "name": "uname",
+            "in": "path",
+            "required": true,
+            "description": "provide user name for whom want to list occupied VMs list.",
+            "type": "string"
+          }
+        ],
+        "summary": "Returns list of all VMs which are occupied by provided user.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/checkout/{uname}": {
+      "post": {
+        "tags": [
+          "Reserves a VM for provided user:"
+        ],
+        "parameters": [
+          {
+            "name": "uname",
+            "in": "path",
+            "required": true,
+            "description": "provide user name for whom you want to reserve the VM.",
+            "type": "string"
+          }
+        ],
+        "summary": "Returns IP of the reserved instance else notifies if no free VM available.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/checkin/{uname}/{ip}": {
+      "post": {
+        "tags": [
+          "Releases a VM from the provided user:"
+        ],
+        "parameters": [
+          {
+            "name": "uname",
+            "in": "path",
+            "required": true,
+            "description": "provide user name from whom you want to release the VM.",
+            "type": "string"
+          },
+          {
+            "name": "ip",
+            "in": "path",
+            "required": true,
+            "description": "provide IP of the VM which you want to release.",
+            "type": "string"
+          }
+        ],
+        "summary": "Releases a VM from the provided user.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
